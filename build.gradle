@@ -86,6 +86,8 @@ minecraft {
 
             property 'forge.enabledGameTestNamespaces', 'examplemod'
 
+            forceExit false
+
             mods {
                 examplemod {
                     source sourceSets.main
