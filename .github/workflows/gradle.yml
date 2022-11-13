@@ -15,6 +15,8 @@ jobs:
       image: ghcr.io/kotori316/fictional-meme/fictional-meme:1.19
     steps:
     - uses: actions/checkout@v3
+    - name: Gradlew Executable
+      run: chmod +x ./gradlew
     - name: Run Game Test
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
