@@ -1,0 +1,21 @@
+name: Java CI with Gradle
+
+on:
+  push:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/kotori316/fictional-meme/fictional-meme:1.19
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Game Test
+      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      with:
+        arguments: runGameTestServer
