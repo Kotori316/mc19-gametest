@@ -18,7 +18,7 @@ public final class RegisterViaAnnotation {
     public void placeDirt(GameTestHelper helper) {
         var pos = BlockPos.ZERO.above();
         helper.setBlock(pos, Blocks.DIRT);
-        helper.succeedIf(() -> helper.getBlockState(pos).is(Blocks.DIRT));
+        helper.succeedIf(() -> helper.assertBlockState(pos, b -> b.is(Blocks.DIRT), () -> "Expect DIRT"));
     }
 
     @GameTest

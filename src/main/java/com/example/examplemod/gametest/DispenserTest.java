@@ -15,6 +15,6 @@ public final class DispenserTest {
     public void push_to_place_water(GameTestHelper helper) {
         final var buttonPos = new BlockPos(2, 3, 3);
         helper.pressButton(buttonPos);
-        helper.succeedIf(() -> helper.getBlockState(new BlockPos(2, 2, 2)).is(Blocks.WATER));
+        helper.succeedWhen(() -> helper.assertBlockState(new BlockPos(2, 2, 2), b -> b.is(Blocks.WATER), () -> "Expect Water"));
     }
 }
