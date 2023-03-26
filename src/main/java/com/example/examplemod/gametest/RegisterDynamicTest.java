@@ -1,7 +1,6 @@
 package com.example.examplemod.gametest;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.IntStream;
@@ -45,19 +44,4 @@ public final class RegisterDynamicTest {
             .thenSucceed();
     }
 
-    @GameTestGenerator
-    public Collection<TestFunction> generator2(){
-        return List.of(new TestFunction(
-            "defaultBatch", /* batch name */
-            "generated_test", /* test name */
-            "%s:empty".formatted(ExampleMod.MODID), /* structure name */
-            100, /* max ticks */
-            0L, /* setup ticks */
-            true, /* required */
-            g -> {
-                g.assertBlock(new BlockPos(0, 1, 0), Blocks.AIR::equals, "");
-                g.succeed();
-            }
-        ));
-    }
 }
